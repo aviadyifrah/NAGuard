@@ -1,0 +1,26 @@
+﻿  Building 'naGuard' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Debug\naGuard.inf [Version] section with DriverVer=10/01/2018,23.56.14.592
+C:\Users\aviad\Documents\limudim\2018A\security project\naGuard\new\naGuard\naGuard\naGuard.inf(71-71): warning 1205: Section [MiniFilter.DriverFiles] referenced from DelFiles and CopyFiles directive.
+  Callbacks.c
+  RegistrationData.c
+  Communication.c
+  naGuard.c
+  Generating Code...
+  naGuard.vcxproj -> C:\Users\aviad\Documents\limudim\2018A\security project\naGuard\new\naGuard\x64\Debug\naGuard.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\aviad\Documents\limudim\2018A\security project\naGuard\new\naGuard\x64\Debug\naGuard.sys
+  
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\aviad\Documents\limudim\2018A\security project\naGuard\new\naGuard\x64\Debug\naGuard\naguard.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\aviad\Documents\limudim\2018A\security project\naGuard\new\naGuard\x64\Debug\naGuard\naguard.cat
+  

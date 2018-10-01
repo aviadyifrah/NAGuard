@@ -1,0 +1,25 @@
+﻿  Building 'naGuardApp' with toolset 'WindowsApplicationForDrivers10.0' and the 'Universal' target platform.
+  naGuardApp.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winnt.h(21998): error C3861: '__readfsdword': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9168): error C3861: '_InterlockedIncrement': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9177): error C3861: '_InterlockedIncrement': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9189): error C2065: 'InterlockedIncrement64': undeclared identifier
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9200): error C3861: '_InterlockedDecrement': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9209): error C3861: '_InterlockedDecrement': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9221): error C2065: 'InterlockedDecrement64': undeclared identifier
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9235): error C3861: '_InterlockedExchange': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9245): error C3861: '_InterlockedExchange': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9257): error C3861: 'InterlockedExchange64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9269): error C3861: '_InterlockedExchangeAdd': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9279): error C3861: '_InterlockedExchangeAdd': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9289): error C3861: '_InterlockedExchangeAdd': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9299): error C3861: '_InterlockedExchangeAdd': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9311): error C3861: 'InterlockedExchangeAdd64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9321): error C3861: 'InterlockedExchangeAdd64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9334): error C3861: '_InterlockedCompareExchange': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9345): error C3861: '_InterlockedCompareExchange': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9358): error C3861: '_InterlockedCompareExchange64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9368): error C3861: 'InterlockedAnd64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9378): error C3861: 'InterlockedOr64': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\winbase.h(9388): error C3861: 'InterlockedXor64': identifier not found
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xlocale(313): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
