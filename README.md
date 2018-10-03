@@ -9,14 +9,15 @@ a user mode application which analyzes all the data received from naGuard I/O Mo
 
 
 
-Introduction to Windows I/O System
+# Introduction to Windows I/O System
+
 Since naGuard I/O Monitor operates at the core of the operating system, the kernel, it is crucial to quickly introduce some relevant concepts of the internals of Windows operating system. 
 The Windows I/O system consists of several executive components that together manage hardware devices and provide interfaces to hardware devices for applications and the system. We’ll only cover the components that make up the I/O system, including the I/O manager as they are crucial. 
 To implement these features the Windows I/O system consists of several executive components as well as device drivers, which are shown in the above figure.
 ■ The I/O manager is the heart of the I/O system. It connects applications and system components to virtual, logical, and physical devices, and it defines the infrastructure that supports device drivers.
 ■ A device driver typically provides an I/O interface for a particular type of device. A driver is a software module that interprets high-level commands, such as read or write, and issues low level, device-specific commands, such as writing to control registers. Device drivers receive commands routed to them by the I/O manager that are directed at the devices they manage, and they inform the I/O manager when those commands are complete. Device drivers often use the I/O manager to forward I/O commands to other device drivers that share in the implementation of a device’s interface or control.
  
-naGuard Analyzer
+# naGuard Analyzer
 Multithreaded scoring table which grant higher scoring to malicious behavior processes. 
  
 •	DB:
@@ -32,7 +33,7 @@ o	Interesting extensions = content holding files – doc, pdf etc.
 
 
 
-Main Data structures:
+# Main Data structures:
 1.	filter_message_t – message received from kernel – Contains the following fields:
 a.	Opcode – can hold:
 i.	0 – new write. 
@@ -59,7 +60,7 @@ viii.	m_total_ops[OPS_NUM] – number of all operations (interesting extensions 
 ix.	 m_ops[OPS_NUM] – number of all operations (interesting extensions only) in the process life.
 
 
-Scoring algorithm:
+# Scoring algorithm:
 
 The algorithm is based on division of ransomware behavior into 3 types:
 1.	Ransomware which copy the original file content into memory, encrypting the content, create new file and write encrypted content into it, and then delete original file.
@@ -80,7 +81,7 @@ For all types –
 The algorithm was tuned experimentally.
 If total score of process is higher then 100 and the process is not signed it would be terminated.
   		
-Tests and Results
+# Tests and Results
 Security solutions benchmarked based on four main parameters: detection accuracy, false positive rate, system stability and overhead [performance hit].
 To test detection accuracy, we infected a system with several known ransomware. Below are the results:
 1.	WannaCry – naGuard successfully detected and stopped malicious processes. Detection occurred within seconds [5-10] after infection.
@@ -90,7 +91,7 @@ To test detection accuracy, we infected a system with several known ransomware. 
 5.	Cerber -  naGuard successfully detected the threat, however it was unable to neutralize it. Cerber injected a malicious code to system processes, and we could not figure out a way to stop execution of malicious code without compromising system stability. After keeping me awake for several nights without having any progress, I decided to check what solutions the industry can offer for these types of threats. I tried the following solutions: ZoneAlarm [CheckPoint], RansomFree [Cybereason], Malwarebyte Anti-Ransomware [Malwarebytes].
 All of the above solutions failed to stop Cerber, and the Malwarebytes anti-Ransomware failed to detect it.
 
-Testing for false positives:
+# Testing for false positives:
 1.	Performing Windows update – no false positives.
 2.	Installing several applications [Dropbox, Visual Studio Code, 7Zip, Google Chrome] – no false positives.
 3.	Archiving and unarchiving several files using 7Zip – no false positives.
