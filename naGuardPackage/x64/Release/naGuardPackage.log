@@ -1,0 +1,15 @@
+﻿  Building 'naGuardPackage' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\Naftaly Avadiaev\source\repos\naGuard\x64\Release\naGuardPackage\naguard.cat
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Naftaly Avadiaev\source\repos\naGuard\x64\Release\naGuardPackage\naguard.cat
+  
