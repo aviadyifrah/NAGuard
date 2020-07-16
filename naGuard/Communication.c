@@ -2,8 +2,6 @@
 
 extern NAGUARD_DATA naGuardData;
 
-
-
 NTSTATUS
 naGuardConnect(
 	_In_ PFLT_PORT ClientPort,
