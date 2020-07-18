@@ -8,7 +8,7 @@ Signature   = "$Windows NT$"
 Class       = "ActivityMonitor"                         ;This is determined by the work this filter driver does
 ClassGuid = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
 Provider    = %ManufacturerName%
-DriverVer = 10/01/2018,23.56.14.592
+DriverVer = 07/19/2020,1.21.32.696
 CatalogFile = naGuard.cat
 
 [DestinationDirs]

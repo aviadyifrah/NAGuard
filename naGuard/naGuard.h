@@ -15,6 +15,23 @@ Misc
 #define PTDBG_TRACE_ROUTINES            0x00000001
 #define PTDBG_TRACE_OPERATION_STATUS    0x00000002
 
+#if DBG
+#define CHECK_STAUS_PRINT_ERROR(_status, _string) \
+	if(!NT_SUCCESS(_status)) {\
+		DbgPrint _string;\
+		leave;\
+	}
+#else
+
+#define CHECK_STAUS_PRINT_ERROR(_status, _string) \
+	if(!NT_SUCCESS(_status)) {\
+		leave;\
+	}
+
+#endif
+
+
+
 extern __fltused;
 
 

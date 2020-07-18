@@ -103,7 +103,7 @@ DriverEntry (
 {
 	PSECURITY_DESCRIPTOR sd;
 	OBJECT_ATTRIBUTES oa;
-	UNICODE_STRING uniString;
+	UNICODE_STRING portObjectNameString;
 
     NTSTATUS status = STATUS_SUCCESS;
 
@@ -114,18 +114,25 @@ DriverEntry (
 	{
 
 		status = FltRegisterFilter( DriverObject, &FilterRegistration, &naGuardData.Filter );
-
+		CHECK_STAUS_PRINT_ERROR(status, ("[NAGAURD] DriverEntry: FltRegisterFilter FAILED. status = 0x%x\n", status))
+		
+		//  Builds a default security descriptor for use with FltCreateCommunicationPort.
 		status = FltBuildDefaultSecurityDescriptor(&sd, FLT_PORT_ALL_ACCESS);
+		CHECK_STAUS_PRINT_ERROR(status, ("[NAGAURD] DriverEntry: FltBuildDefaultSecurityDescriptor FAILED. status = 0x%x\n", status))
 
-		RtlInitUnicodeString(&uniString, NAGUARD_PORT_NAME);
+		RtlInitUnicodeString(&portObjectNameString, NAGUARD_PORT_NAME);
 
-		InitializeObjectAttributes(&oa, &uniString, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, sd);
+		InitializeObjectAttributes(&oa, &portObjectNameString, OBJ_KERNEL_HANDLE | OBJ_CASE_INSENSITIVE, NULL, sd);
 
 		status = FltCreateCommunicationPort(naGuardData.Filter, &naGuardData.ServerPort, &oa, NULL, naGuardConnect, naGuardDisconnect, naGuardMessage, 1);
+
+		CHECK_STAUS_PRINT_ERROR(status, ("[NAGAURD] DriverEntry: FltCreateCommunicationPort FAILED. status = 0x%x\n", status))
 
 		FltFreeSecurityDescriptor(sd);
 
 		status = FltStartFiltering(naGuardData.Filter);
+
+		CHECK_STAUS_PRINT_ERROR(status, ("[NAGAURD] DriverEntry: FltStartFiltering FAILED. status = 0x%x\n", status))
 
 	} finally 
 	{
